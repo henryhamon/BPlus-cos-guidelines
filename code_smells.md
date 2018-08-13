@@ -36,7 +36,8 @@ The recurrence of the items often means there is duplicate code spread around to
 
 ### Example
 
-##
+## Spaghetti
+
 Code should be modular and methods should perform a specific task.  Do not try and create methods that do everything (UI layout, validation, database updates, etc...) in a single method.
 
 ### Example
@@ -44,3 +45,63 @@ Code should be modular and methods should perform a specific task.  Do not try a
 ## God Class
 
 Classes that control many other classes and have many dependencies and lots of responsibilities.
+
+## Too Many Statements
+
+A method with _Too Many Statements_ is any method that has a large number of lines.
+
+_Too Many Statements_ warns about any method that has more than 5 statements.
+Count +1 for each statement in a method and +1 for every statement within a control structure
+(`if`, `else`, `case`, `when`, `for`, `while`, `until`, `begin`, `rescue`) but
+it doesn't count the control structure itself.
+
+### Example
+
+## Dinosaur
+
+Code uses the old Mumps style of coding with line tags, goto, break, then I do not recommend adding Cache ObjectScript (COS) procedure blocks within the legacy code, because if added within code that contains things like structured DOs, then it could have impact on process flow, variable scoping, etc...
+
+## Dot
+
+Dotted syntax is not generally allowed
+
+### Example
+
+```cos
+  // Bad
+  If date=$Horolog
+  . Set count = $Increment(count)
+
+  // Good
+  If date=$Horolog {
+    Set count = $Increment(count)
+  }
+```
+
+## Shorty
+
+Many ObjectScript functions have a short name in addition to their regular name.
+However, using these short names can be confusing, especially for new developers, and harm code readability.
+
+### Example
+
+```cos
+  // Bad
+  S today = $H
+
+  // Good
+  Set today = $Horolog
+```
+
+## Hardcoded
+
+Use parameters insted
+
+## Xecuter
+
+The use of XECUTE command has security and performance implications:
+
+* Security: the command to be executed may be a user input; if validation is not performed thoroughly, malicious code may be executed.
+* Performance: the string input needs to be constructed (if not a single string literal but a concatenation of strings, for instnace) and evaluated.
+
+For these reasons, you should avoid using XECUTE and use a proper set of commands instead.
