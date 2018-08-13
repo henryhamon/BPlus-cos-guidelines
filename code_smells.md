@@ -105,3 +105,38 @@ The use of XECUTE command has security and performance implications:
 * Performance: the string input needs to be constructed (if not a single string literal but a concatenation of strings, for instnace) and evaluated.
 
 For these reasons, you should avoid using XECUTE and use a proper set of commands instead.
+
+## List Over Pieces
+
+Use $Piece is slightly less intuitive than $ListFromString/$ListNext.
+
+* A While or Do...While loop performs slightly better than an equivalent argumentless For loop.
+
+### Example
+
+```cos
+  // Bad
+  Set string = "1,2,3,4"
+  For i=1:1:$Length(string,",") {
+    Set piece = $Piece(string,",",i)
+    Write !, piece
+  }
+
+  // Good
+  Set string = "1,2,3,4"
+  Set list = $ListFromString(string,",")
+  Set pointer = 0
+  While $ListNext(list, pointer, piece) {
+    Write !, piece
+  }
+```
+
+## ListBuild over ListFromString
+
+Given a choice of data structures, traversal of $ListBuild lists seems to have a slight performance edge over an equivalent local array for small inputs, while the local array offers significantly better performance for larger inputs. I'm not sure why there's such a huge difference in performance. (Relatedly, it would be worth comparing the cost of random inserts and removals in a $ListBuild list vs. a local array with integer subscripts; I suspect that set $list would be much faster than shifting the values in such an array.)
+
+```cos
+  Set list = $ListFromString("1,2,3,4",",")
+  // Good
+  Set list = $ListBuild(1,2,3,4)
+```
