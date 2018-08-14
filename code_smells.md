@@ -1,3 +1,10 @@
+
+![Image of Judge Dredd](https://forums.2000ad.com/avatars_static/avatar_235.jpg)
+
+> I am the law and you'd better believe it! <br>
+> -- Judge Dredd
+
+
 # Code Smells
 
 Code Smells are indicators of where your code might be hard to read, maintain or evolve, rather than things that are specifically _wrong_.
