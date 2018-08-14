@@ -453,3 +453,18 @@ ObjectScript allows spaces between the unary negation operator (that is, ') and 
 
 This inspection reports all variables declared in the context of a method or classmethod, which is not used afterwards anywhere in this method.
 Such variables take unnecessary memory and processing power; they should be removed for efficiency reasons.
+
+## Track uses of "TODO" tags
+
+TODO tags are commonly used to mark places where some more code is required, but which the developer wants to implement later.
+Sometimes the developer will not have the time or will simply forget to get back to that tag.
+This rule is meant to track those tags and to ensure that they do not go unnoticed.
+
+## Track uses of CacheTemp
+
+CacheTemp are commonly used, but it´s good to use different variables types like List or Array.
+
+## Use of $ZUTIL may be replaced
+
+Starting with Caché 2010.1, InterSystems does not document the $ZUTIL function anymore. It is advised that uses of this function be replaced with alternatives.
+[Please see this URL for a list of replacements.](http://docs.intersystems.com/cache20151/csp/docbook/DocBook.UI.Page.cls?KEY=RCOS_replacements)
