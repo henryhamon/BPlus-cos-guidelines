@@ -103,15 +103,6 @@ However, using these short names can be confusing, especially for new developers
 
 Use parameters insted
 
-## Xecuter
-
-The use of XECUTE command has security and performance implications:
-
-* Security: the command to be executed may be a user input; if validation is not performed thoroughly, malicious code may be executed.
-* Performance: the string input needs to be constructed (if not a single string literal but a concatenation of strings, for instnace) and evaluated.
-
-For these reasons, you should avoid using XECUTE and use a proper set of commands instead.
-
 ## List Over Pieces
 
 Use $Piece is slightly less intuitive than $ListFromString/$ListNext.
