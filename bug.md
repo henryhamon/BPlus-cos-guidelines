@@ -22,8 +22,9 @@ Is an error, flaw, failure or fault in a computer program or system that causes 
  
  The argument passed must be of the type expected by the method. When no type is defined for a parameter, a %String argument is expected.
 
+## Example
 ```cos
-Class Sample.NightWatch
+Class Sample.Pacient
 {
     ClassMethod DoWork1(pObj As Sample.Person)
     {
@@ -46,8 +47,8 @@ Class Sample.NightWatch
     ClassMethod foo()
     {
         #Dim objPerson As Sample.Person = ##class(Sample.Person).%New()
-        Set objPerson.name = "Jon"
-        Set objPerson.surname = "Snow"
+        Set objPerson.name = "Joseph"
+        Set objPerson.surname = "Matias"
         Set objPerson.age = 42
 
         Do ..DoWork1(objPerson)
@@ -55,4 +56,41 @@ Class Sample.NightWatch
         Do ..DoWork3(objPerson)     // PARAMETER error
     }
 }
+```
+
+## Local variable name is too long
+
+:red_circle: Status: Fatal.
+
+ObjectScript only account for the 31 first characters in a local variable name; further characters will be ignored.
+
+This check ensures that all declared local variables have a length less than, or equal to, 31 characters.
+
+See [here](https://docs.intersystems.com/cache201513/csp/docbook/DocBook.UI.Page.cls?KEY=GORIENT_appx_identifiers#GORIENT_appx_identifiers_cos_localvars) for more information.
+
+## Method not found
+
+:red_circle: Status: Fatal.
+
+Declare the method you need to invoke for the class, or remove the reference to the undefined method.
+
+```cos
+Class Sample.NightWatch Extends %RegisteredObject
+{
+    Property name As %String;
+    Property surname As %String;
+    Property age As %Integer;
+
+    ClassMethod FullName() {
+      Write !,..name_" "_..surname
+    }
+}
+
+  ...
+
+Set obj = ##class(Sample.Person).%New()
+Set obj.name = "Joseph"
+Set obj.surname = "Matias"
+
+Do obj.() // METHOD DOES NOT EXIST
 ```
