@@ -256,63 +256,11 @@ This rule checks that all parameters of a given method or class method have a ty
   }
 ```
 
-## Method declared as "ProcedureBlock = 0"
-
-Usage of ProcedureBlock = 0 in method modifiers is confusing (at best) and dangerous (always). Consider those two classes, running in the same process:
-
-```cos
-    // Class C1
-    Class C1
-    {
-    ClassMethod m() [ ProcedureBlock = 0 ]
-    {
-        set x = "world"
-    }
-    }
-
-    // Class C2
-    Class C2
-    {
-    ClassMethod m() [ ProcedureBlock = 0 ]
-    {
-        do ##class(C1).m()
-        w "hello ", x, "!", !
-    }
-    }
-```
-
 ## Local variable name is too long
 
 ObjectScript only account for the 31 first characters in a local variable name; further characters will be ignored.
 [reference](http://docs.intersystems.com/cache20151/csp/docbook/DocBook.UI.Page.cls?KEY=GORIENT_appx_identifiers#GORIENT_appx_identifiers_cos_localvars)
 
-## Not ProcedureBlock
-
-Usage of Not ProcedureBlock in class modifiers is, confusing (at best) and dangerous (always). Consider those two classes running in the same process:
-
-```cos
-    // Class C1
-    Class C1 [ Not ProcedureBlock ]
-    {
-    ClassMethod m()
-    {
-        set x = "world"
-    }
-    }
-
-    // Class C2
-    Class C2 [ Not ProcedureBlock ]
-    {
-    ClassMethod m()
-    {
-        do ##class(C1).m()
-        w "hello ", x, "!", !
-    }
-    }
-```
-
-This means that any variable set in any class defined as Not ProcedureBlock will be visible to any other such class.
-This is a very dangerous feature. It is very strongly recommended that the code be refactored so as to avoid using this feature altogether. One such way would be, for example, to use globals instead.
 
 ## Boolean expression not surrounded by parentheses
 
