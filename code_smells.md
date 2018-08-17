@@ -9,9 +9,11 @@
 
 Code Smells are indicators of where your code might be hard to read, maintain or evolve, rather than things that are specifically _wrong_.
 
-## :warning: Warnings
+## Warnings
 
 ### Shorty
+
+:warning:
 
 Many ObjectScript functions have a short name in addition to their regular name.
 However, using these short names can be confusing, especially for new developers, and harm code readability.
@@ -28,12 +30,16 @@ However, using these short names can be confusing, especially for new developers
 
 ### Multiple If/Else
 
+:warning:
+
 _Multiple if/else_ makes the code difficult to test and maintain
 
 #### Example
 
 
 ### Long Parameter List
+
+:warning:
 
 A _Long Parameter List_ occurs when a method has a lot of parameters.
 
@@ -51,6 +57,8 @@ A common solution to this problem would be the introduction of parameter objects
 ```
 
 ### Unused Parameter
+
+:warning:
 
 _Unused Parameter_ refers to methods with parameters that are unused in scope of the method.
 
