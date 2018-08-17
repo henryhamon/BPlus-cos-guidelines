@@ -9,29 +9,62 @@
 
 Code Smells are indicators of where your code might be hard to read, maintain or evolve, rather than things that are specifically _wrong_.
 
-## Multiple If/Else
+## :warning: Warnings
+
+### Shorty
+
+Many ObjectScript functions have a short name in addition to their regular name.
+However, using these short names can be confusing, especially for new developers, and harm code readability.
+
+#### Example
+
+```cos
+  // Bad
+  S today = $H
+
+  // Good
+  Set today = $Horolog
+```
+
+### Multiple If/Else
 
 _Multiple if/else_ makes the code difficult to test and maintain
 
-### Example
+#### Example
 
-## Long Parameter List
+
+### Long Parameter List
 
 A _Long Parameter List_ occurs when a method has a lot of parameters.
 
-### Solution
+_Long Parameter List_ reports any method or block with more than 5 parameters.
+
+#### Solution
 A common solution to this problem would be the introduction of parameter objects.
 
-### Example
+#### Example
 
-## Unused Parameter
+```cos
+ ClassMethod LongList(foo as %String, bar as %String, baz as %String, fling as %String, flung as %String, blung as %String)
+ {
+ }
+```
+
+### Unused Parameter
 
 _Unused Parameter_ refers to methods with parameters that are unused in scope of the method.
 
 Having unused parameters in a method is code smell because leaving dead code in
 a method can never improve the method and it makes the code confusing to read.
 
-### Example
+#### Example
+
+```cos
+ ClassMethod LongList(foo as %Numeric, bar as %Numeric, baz as %Numeric) as Numeric
+ {
+	Quit foo + bar // but not baz
+ }
+```
 
 ## Data Clump
 
@@ -82,21 +115,6 @@ Dotted syntax is not generally allowed
   If date=$Horolog {
     Set count = $Increment(count)
   }
-```
-
-## Shorty
-
-Many ObjectScript functions have a short name in addition to their regular name.
-However, using these short names can be confusing, especially for new developers, and harm code readability.
-
-### Example
-
-```cos
-  // Bad
-  S today = $H
-
-  // Good
-  Set today = $Horolog
 ```
 
 ## Hardcoded
