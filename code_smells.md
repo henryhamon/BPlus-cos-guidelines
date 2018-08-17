@@ -66,6 +66,8 @@ a method can never improve the method and it makes the code confusing to read.
  }
 ```
 
+---
+
 ## Data Clump
 
 In general, a _Data Clump_ occurs when the same two or three items frequently
