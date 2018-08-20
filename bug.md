@@ -2,13 +2,11 @@
 
 Is an error, flaw, failure or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways.
 
-## :red_circle: Fatal.
-## :warning: Warnings
+### :red_circle: Fatal
+### :warning: Warnings
 
-## :red_circle: Class not found
-
- :red_circle: Status: Fatal.
-
+##  Class not found
+### :red_circle:
  The class must exists.
 
  ### Example
@@ -19,7 +17,8 @@ Is an error, flaw, failure or fault in a computer program or system that causes 
     
  ```
 
-## :red_circle: Incompatible argument type in a method
+## Incompatible argument type in a method
+### :red_circle:
   
  The argument passed must be of the type expected by the method. When no type is defined for a parameter, a %String argument is expected.
 
@@ -59,7 +58,8 @@ Class Sample.Pacient
 }
 ```
 
-## :red_circle: Local variable name is too long
+## Local variable name is too long
+### :red_circle:
 
 ObjectScript only account for the 31 first characters in a local variable name; further characters will be ignored.
 
@@ -67,7 +67,8 @@ This check ensures that all declared local variables have a length less than, or
 
 See [here](https://docs.intersystems.com/cache201513/csp/docbook/DocBook.UI.Page.cls?KEY=GORIENT_appx_identifiers#GORIENT_appx_identifiers_cos_localvars) for more information.
 
-## :red_circle: Method not found
+## Method not found
+### :red_circle:
 
 Declare the method you need to invoke for the class, or remove the reference to the undefined method.
 
@@ -92,8 +93,8 @@ Set obj.surname = "Matias"
 Do obj.() // METHOD DOES NOT EXIST
 ```
 
-## :red_circle: Method with unexpected arguments
-
+## Method with unexpected arguments
+### :red_circle:
 Use the right number of parameters to call the function.
 
 ## Example
@@ -113,7 +114,8 @@ Class Sample.Test
 }
 ```
 
-## :red_circle: Missing argument(s) in method call
+## Missing argument(s) in method call
+### :red_circle:
 
 Use the right number of parameters to the function call.
 
@@ -140,7 +142,8 @@ Note that this check will account for arguments with default values, which means
 ClassMethod m(x As %String, y As %String = "World")
 ```
 
-## :red_circle: No quit (or return) found
+## No quit (or return) found
+### :red_circle:
 
 Method is defined with ReturnType value but has no QUIT or RETURN command.
 
@@ -156,7 +159,8 @@ ClassMethod Call()
 }
 ```
 
-## :red_circle: Property not found
+## Property not found
+### :red_circle:
 
 Declare the property you need to use in the class, or remove the reference to the undefined property.
 
@@ -179,7 +183,8 @@ Class Sample.Training Extends %RegisteredObject
 }
 ```
 
-## :red_circle: Quit whitout arguments
+## Quit whitout arguments
+### :red_circle:
 
 Method is defined with ReturnType value but has `QUIT` or `RETURN` without arguments.
 
@@ -196,7 +201,8 @@ ClassMethod bar()
 }
 ```
 
-## :red_circle: Variable not found
+## Variable not found
+### :red_circle:
 
 A variable is used in a expression, but was neither passed as argument nor set before.
 
