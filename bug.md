@@ -2,8 +2,6 @@
 
 Is an error, flaw, failure or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways.
 
-:red_circle: Fatal :warning: Warnings
-
 ## Class not found
 :red_circle:
 
