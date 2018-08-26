@@ -74,9 +74,15 @@ a method can never improve the method and it makes the code confusing to read.
  }
 ```
 
----
+## God Class
+
+:warning:
+
+Classes that control many other classes and have many dependencies and lots of responsibilities.
 
 ## Data Clump
+
+:warning:
 
 In general, a _Data Clump_ occurs when the same two or three items frequently
 appear together in classes and parameter lists, or when a group of instance
@@ -86,15 +92,13 @@ The recurrence of the items often means there is duplicate code spread around to
 
 ### Example
 
+---
+
 ## Spaghetti
 
 Code should be modular and methods should perform a specific task.  Do not try and create methods that do everything (UI layout, validation, database updates, etc...) in a single method.
 
 ### Example
-
-## God Class
-
-Classes that control many other classes and have many dependencies and lots of responsibilities.
 
 ## Too Many Statements
 
