@@ -238,30 +238,6 @@ If you have more than one statement, it is preferred to use the brace forms of t
 
 More generally, in new code, you should prefer using the brace forms of flow control statements instead of the legacy, braceless forms.
 
-## Method argument with no type
-
-This rule checks that all parameters of a given method or class method have a type declared.
-
-```cos
-  // Bad
-  Method m(foo, bar)
-  {
-      // body of the method here
-  }
-
-  // Good
-  Method m(foo as %String, bar as %Integer)
-  {
-      // body of the method here
-  }
-```
-
-## Local variable name is too long
-
-ObjectScript only account for the 31 first characters in a local variable name; further characters will be ignored.
-[reference](http://docs.intersystems.com/cache20151/csp/docbook/DocBook.UI.Page.cls?KEY=GORIENT_appx_identifiers#GORIENT_appx_identifiers_cos_localvars)
-
-
 ## Boolean expression not surrounded by parentheses
 
 ObjectScript's flow control keywords accepting boolean expressions (such as if, while and others) allow to write boolean expressions without surrounding parentheses; for instance:
